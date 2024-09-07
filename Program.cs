@@ -1,3 +1,4 @@
+using dotnet_demo.Helpers;
 using dotnet_demo.interfaces;
 using dotnet_demo.Querys;
 
@@ -10,6 +11,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
 builder.Services.AddScoped<ILogin, LoginQuery>();
 
 var app = builder.Build();
