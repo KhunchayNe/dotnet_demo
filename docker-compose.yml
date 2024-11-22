@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   demoapi:
-    image: ${DOCKER_REGISTRY-}demo:1.0.0
+    image: demo:1.0.0
     build:
       context: .
       dockerfile: ./Dockerfile
