@@ -7,8 +7,8 @@ services:
       dockerfile: ./Dockerfile
     restart: on-failure
     ports:
-     - "5080:80"
-     - "5443:443"
+     - "5081:80"
+     - "5444:443"
     volumes:
       - "./aspnet:/root/.aspnet/https:ro"
       - "./aspnet:/root/.microsoft/usersecrets:ro"
