@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+  demoapi:
+    image: ${DOCKER_REGISTRY-}demo:1.0.0
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    restart: on-failure
+    ports:
+     - "5080:80"
+     - "5443:443"
+    volumes:
+      - "./aspnet:/root/.aspnet/https:ro"
+      - "./aspnet:/root/.microsoft/usersecrets:ro"
+      - "./Logs:/App/Logs"
+
+# volumes:
+#   mssql_log:
+# networks:
+#   default:
+#     external: true
+#     name: reverse-proxy
